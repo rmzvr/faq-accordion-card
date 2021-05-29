@@ -41,11 +41,16 @@
     --card-item-padding: 1.1875em;
 }
 
-body {
+.container {
     height: 100vh;
+    width: calc(min(87%, 1440px));
+
+    margin-inline: auto;
+}
+
+body {
     font-family: var(--ff-primary);
     font-size: var(--fs-main);
-    line-height: 1;
     background: linear-gradient(var(--clr-primary-grad-100), var(--clr-primary-grad-200));
 }
 
@@ -64,10 +69,20 @@ body {
         left: -5.8125rem;
         z-index: 3;
     }
+
+    @media screen and (max-width: 375px) {
+        &::before {
+            content: url(./images/illustration-woman-online-mobile.svg);
+            position: absolute;
+            top: -108px;
+            left: 45%;
+            transform: translateX(-50%);
+        }
+    }
 }
 
 .card {
-    height: 31.8125rem;
+    min-height: 31.8125rem;
     border-radius: 1.4375rem;
 
     display: flex;
@@ -78,6 +93,9 @@ body {
 
     background-color: var(--clr-neutral-white);
 
+    @media screen and (max-width: 375px) {
+        flex-direction: column;
+    }
 }
 
 .card__image {
@@ -85,24 +103,55 @@ body {
 
     position: relative;
 
-    &-layout-1 {
+    &-desktop-1 {
         position: absolute;
         top: -18.75rem;
         left: -36.1875rem;
         z-index: 1;
     }
 
-    &-layout-2 {
+    &-desktop-2 {
         position: absolute;
         top: 4.375rem;
         left: -5.3125rem;
         z-index: 2;
     }
+
+    &-mobile-1 {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &-mobile-2 {
+        position: absolute;
+        top: 0;
+        left: 44%;
+        transform: translateX(-50%);
+    }
+
+    @media screen and (max-width: 375px) {
+        width: 100%;
+        height: 107px;
+
+        &-desktop-1,
+        &-desktop-2 {
+            display: none;
+        }
+
+
+    }
 }
 
 .card__content {
     width: 58%;
-    padding: 4.0625em 6em 5.1875em 5.375em;
+    padding: 4.0625em 6em 1em 5.375em;
+
+    @media screen and (max-width: 375px) {
+        width: 100%;
+        padding: 28px 24px 48px;
+    }
 }
 
 .card__title {
@@ -112,10 +161,16 @@ body {
     margin-bottom: 1.40625em;
 
     color: var(--clr-primary-text-100);
+
+    @media screen and (max-width: 375px) {
+        text-align: center;
+        margin-bottom: 38px;
+    }
 }
 
 .card__item {
-    width: 350px;
+    width: 100%;
+    max-width: 350px;
     padding-top: var(--card-item-padding);
 
     border-bottom: 1px solid var(--clr-neutral-divid);
@@ -151,13 +206,28 @@ body {
 .card__question {
     font-weight: normal;
     color: var(--clr-neutral-text-100);
+
+    @media screen and (max-width: 375px) {
+        font-size: 13px;
+    }
 }
 
 .card__arrow {
     margin-right: 1em;
+
+    @media screen and (max-width: 375px) {
+        margin-right: 0;
+    }
 }
 
 .card__answer {
     display: none;
     max-width: 43ch;
+}
+
+
+
+
+@media screen and (max-width: 375px) {
+    
 }
