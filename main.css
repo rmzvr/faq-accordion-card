@@ -39,7 +39,7 @@
 
 .container {
   height: 100vh;
-  width: calc(min(87%, 1440px));
+  width: calc(min(87%, 90rem));
   margin-inline: auto;
 }
 
@@ -67,7 +67,7 @@ body {
   z-index: 3;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 23.4375rem) {
   .card-shadow-wrapper::before {
     content: url(./images/illustration-woman-online-mobile.svg);
     position: absolute;
@@ -92,8 +92,9 @@ body {
   background-color: var(--clr-neutral-white);
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 23.4375rem) {
   .card {
+    min-height: 30rem;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -136,10 +137,10 @@ body {
           transform: translateX(-50%);
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 23.4375rem) {
   .card__image {
     width: 100%;
-    height: 107px;
+    min-height: 6.6875rem;
   }
   .card__image-desktop-1, .card__image-desktop-2 {
     display: none;
@@ -151,10 +152,10 @@ body {
   padding: 4.0625em 6em 1em 5.375em;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 23.4375rem) {
   .card__content {
     width: 100%;
-    padding: 28px 24px 48px;
+    padding: 1.75em 1.5em 3em;
   }
 }
 
@@ -165,16 +166,15 @@ body {
   color: var(--clr-primary-text-100);
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 23.4375rem) {
   .card__title {
     text-align: center;
-    margin-bottom: 38px;
+    margin-bottom: 1.1875em;
   }
 }
 
 .card__item {
-  width: 100%;
-  max-width: 350px;
+  max-width: 21.875rem;
   padding-top: var(--card-item-padding);
   border-bottom: 1px solid var(--clr-neutral-divid);
 }
@@ -218,17 +218,18 @@ body {
   color: var(--clr-neutral-text-100);
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 23.4375rem) {
   .card__question {
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
 }
 
 .card__arrow {
+  margin-left: 0.875em;
   margin-right: 1em;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 23.4375rem) {
   .card__arrow {
     margin-right: 0;
   }
