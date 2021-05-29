@@ -31,12 +31,16 @@
   --clr-neutral-white: hsl(0, 0%, 100%);
   --clr-neutral-divid: hsl(240, 5%, 91%);
   --ff-primary: "kumbh_sans";
+  --fs-main: 0.875rem;
+  --fs-title: 2rem;
+  --fs-answer: 0.857em;
+  --card-item-padding: 1.1875em;
 }
 
 body {
   height: 100vh;
   font-family: var(--ff-primary);
-  font-size: 0.875rem;
+  font-size: var(--fs-main);
   line-height: 1;
   background: -webkit-gradient(linear, left top, left bottom, from(var(--clr-primary-grad-100)), to(var(--clr-primary-grad-200)));
   background: linear-gradient(var(--clr-primary-grad-100), var(--clr-primary-grad-200));
@@ -66,10 +70,10 @@ body {
   display: -ms-flexbox;
   display: flex;
   overflow: hidden;
-  -webkit-filter: drop-shadow(0px 0.25rem 0.25rem rgba(0, 0, 0, 0.25));
-          filter: drop-shadow(0px 0.25rem 0.25rem rgba(0, 0, 0, 0.25));
-  -webkit-box-shadow: 0px 3.125rem 3.125rem -1.25rem rgba(53, 18, 122, 0.5);
-          box-shadow: 0px 3.125rem 3.125rem -1.25rem rgba(53, 18, 122, 0.5);
+  -webkit-filter: drop-shadow(0px 0.25em 0.25em rgba(0, 0, 0, 0.25));
+          filter: drop-shadow(0px 0.25em 0.25em rgba(0, 0, 0, 0.25));
+  -webkit-box-shadow: 0px 3.125em 3.125em -1.25em rgba(53, 18, 122, 0.5);
+          box-shadow: 0px 3.125em 3.125em -1.25em rgba(53, 18, 122, 0.5);
   background-color: var(--clr-neutral-white);
 }
 
@@ -94,24 +98,24 @@ body {
 
 .card__content {
   width: 58%;
-  padding: 65px 96px 83px 86px;
+  padding: 4.0625em 6em 5.1875em 5.375em;
 }
 
 .card__title {
   font-weight: bold;
-  font-size: 2rem;
+  font-size: var(--fs-title);
   margin-bottom: 1.40625em;
   color: var(--clr-primary-text-100);
 }
 
 .card__item {
   width: 350px;
-  padding-top: 1.1875rem;
+  padding-top: var(--card-item-padding);
   border-bottom: 1px solid var(--clr-neutral-divid);
 }
 
 .card__item:hover {
-  padding-bottom: 1.1875rem;
+  padding-bottom: var(--card-item-padding);
 }
 
 .card__item:hover .card__question {
@@ -126,7 +130,7 @@ body {
 
 .card__item:hover .card__answer {
   display: block;
-  font-size: 0.857em;
+  font-size: var(--fs-answer);
   line-height: 1.5;
   color: var(--clr-neutral-text-200);
 }
@@ -141,7 +145,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-bottom: 1.1875rem;
+  padding-bottom: var(--card-item-padding);
 }
 
 .card__question {
