@@ -119,17 +119,7 @@ body {
     }
 
     &-mobile-1 {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    &-mobile-2 {
-        position: absolute;
-        top: 0;
-        left: 44%;
-        transform: translateX(-50%);
+        display: none;
     }
 
     @media screen and (max-width: 23.4375rem) {
@@ -141,7 +131,13 @@ body {
             display: none;
         }
 
-
+        &-mobile-1 {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
     }
 }
 

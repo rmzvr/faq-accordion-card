@@ -122,19 +122,7 @@ body {
 }
 
 .card__image-mobile-1 {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-}
-
-.card__image-mobile-2 {
-  position: absolute;
-  top: 0;
-  left: 44%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  display: none;
 }
 
 @media screen and (max-width: 23.4375rem) {
@@ -144,6 +132,14 @@ body {
   }
   .card__image-desktop-1, .card__image-desktop-2 {
     display: none;
+  }
+  .card__image-mobile-1 {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
   }
 }
 
