@@ -42,37 +42,41 @@
 }
 
 .container {
-    height: 100vh;
     width: calc(min(87%, 90rem));
-
     margin-inline: auto;
 }
 
 body {
+    padding: 102px 0;
+
     font-family: var(--ff-primary);
     font-size: var(--fs-main);
     background: linear-gradient(var(--clr-primary-grad-100), var(--clr-primary-grad-200));
+
+    @media screen and (max-width: 58.125rem) {
+        padding: 130px 0 90px;
+    }
 }
 
 .card-shadow-wrapper {
     max-width: 57.5rem;
+    margin: 0 auto;
 
     position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 
         &::before {
-        content: url(./images/illustration-box-desktop.svg);
+        content: url(./assets/images/illustration-box-desktop.svg);
         position: absolute;
         top: 12.875rem;
         left: -5.8125rem;
         z-index: 3;
     }
 
-    @media screen and (max-width: 23.4375rem) {
+    @media screen and (max-width: 58.125rem) {
+        max-width: 21rem;
+
         &::before {
-            content: url(./images/illustration-woman-online-mobile.svg);
+            content: url(./assets/images/illustration-woman-online-mobile.svg);
             position: absolute;
             top: -108px;
             left: 45%;
@@ -93,7 +97,7 @@ body {
 
     background-color: var(--clr-neutral-white);
 
-    @media screen and (max-width: 23.4375rem) {
+    @media screen and (max-width: 58.125rem) {
         min-height: 30rem;
         flex-direction: column;
     }
@@ -122,7 +126,7 @@ body {
         display: none;
     }
 
-    @media screen and (max-width: 23.4375rem) {
+    @media screen and (max-width: 58.125rem) {
         width: 100%;
         min-height: 6.6875rem;
 
@@ -143,11 +147,11 @@ body {
 
 .card__content {
     width: 58%;
-    padding: 4.0625em 6em 1em 5.375em;
+    padding: 4.0625em 6em 3em 5.375em;
 
-    @media screen and (max-width: 23.4375rem) {
+    @media screen and (max-width: 58.125rem) {
         width: 100%;
-        padding: 1.75em 1.5em 3em;
+        padding: 1.75em 1.5em  3em;
     }
 }
 
@@ -159,7 +163,7 @@ body {
 
     color: var(--clr-primary-text-100);
 
-    @media screen and (max-width: 23.4375rem) {
+    @media screen and (max-width: 58.125rem) {
         text-align: center;
         margin-bottom: 1.1875em;
     }
@@ -171,23 +175,18 @@ body {
 
     border-bottom: 1px solid var(--clr-neutral-divid);
 
-    &:hover {
-        padding-bottom: var(--card-item-padding);
-
+    &[open] {
         .card__question {
             font-weight: bold;
             color: var(--clr-primary-text-100);
         }
 
         .card__arrow {
-            transform: rotateX(180deg);
+            transform: rotateZ(180deg);
         }
 
         .card__answer {
-            display: block;
-            font-size: var(--fs-answer);
-            line-height: 1.5;
-            color: var(--clr-neutral-text-200);
+            animation: slide .3s cubic-bezier(0.390, 0.575, 0.565, 1.000) forwards;
         }
     }
 }
@@ -196,14 +195,21 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
     padding-bottom: var(--card-item-padding);
+
+    &:hover {
+        .card__question {
+            color: var(--clr-primary-text-900);
+        }
+    }
 }
 
 .card__question {
     font-weight: normal;
     color: var(--clr-neutral-text-100);
 
-    @media screen and (max-width: 23.4375rem) {
+    @media screen and (max-width: 58.125rem) {
         font-size: 0.8125rem;
     }
 }
@@ -212,12 +218,30 @@ body {
     margin-left: 0.875em;
     margin-right: 1em;
 
-    @media screen and (max-width: 23.4375rem) {
+    transition: all .3s ease-in-out;
+
+    @media screen and (max-width: 58.125rem) {
         margin-right: 0;
     }
 }
 
 .card__answer {
-    display: none;
     max-width: 43ch;
+    padding-bottom: var(--card-item-padding);
+
+    font-size: var(--fs-answer);
+    line-height: 1.5;
+    color: var(--clr-neutral-text-200);
 }
+
+
+@keyframes slide {
+    0% {
+      transform: scaleY(0);
+      transform-origin: 100% 0%;
+    }
+    100% {
+      transform: scaleY(1);
+      transform-origin: 100% 0%;
+    }
+  }
