@@ -47,6 +47,10 @@
 }
 
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     padding: 102px 0;
 
     font-family: var(--ff-primary);
@@ -64,7 +68,7 @@ body {
 
     position: relative;
 
-        &::before {
+    &::before {
         content: url(./assets/images/illustration-box-desktop.svg);
         position: absolute;
         top: 12.875rem;
@@ -151,7 +155,7 @@ body {
 
     @media screen and (max-width: 58.125rem) {
         width: 100%;
-        padding: 1.75em 1.5em  3em;
+        padding: 1.75em 1.5em 3em;
     }
 }
 
@@ -186,7 +190,7 @@ body {
         }
 
         .card__answer {
-            animation: slide .3s cubic-bezier(0.390, 0.575, 0.565, 1.000) forwards;
+            animation: slide 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) forwards;
         }
     }
 }
@@ -218,7 +222,7 @@ body {
     margin-left: 0.875em;
     margin-right: 1em;
 
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 
     @media screen and (max-width: 58.125rem) {
         margin-right: 0;
@@ -234,14 +238,13 @@ body {
     color: var(--clr-neutral-text-200);
 }
 
-
 @keyframes slide {
     0% {
-      transform: scaleY(0);
-      transform-origin: 100% 0%;
+        transform: scaleY(0);
+        transform-origin: 100% 0%;
     }
     100% {
-      transform: scaleY(1);
-      transform-origin: 100% 0%;
+        transform: scaleY(1);
+        transform-origin: 100% 0%;
     }
-  }
+}
